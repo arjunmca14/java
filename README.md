@@ -13,4 +13,9 @@ javaTutorial
 <li>command-line arguments</li>
 <li>java coding standards</li>
 </ol>
+<ol>
+	<li> <b>Identifier</b></li>
+	<p>A name in java program is called identifiers ,it can be class name or variable name or method name or label name </p>
+</ol>
+
 
