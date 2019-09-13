@@ -1,0 +1,283 @@
+Thread t1 = new Thread();
+Thread t2 = new Thread();
+Thread t3 = t1;
+
+String s1 = new String("GEEKS");
+String s2 = new String("GEEKS");
+
+System.out.println(t1 == t3);
+System.out.println(t1 == t2);
+
+System.out.println(t1.equals(t2));
+System.out.println(s1.equals(s2));
+
+true
+false
+false
+true
+
+============================================================================================
+
+String s1 = new String("GEEKS");
+String s2 = new String("GEEKS");
+String s3 = "GEEKS";
+String s4 = "Hello";
+
+System.out.println(s1 == s3);
+System.out.println(s1 == s4);
+
+System.out.println(s1.equals(s3));
+System.out.println(s1.equals(s4));
+
+false
+false
+true
+false
+
+============================================================================================
+
+String s1 = "tutorialspoint";
+String s2 = "tutorialspoint";
+String s3 = new String ("Tutorials Point");
+System.out.println(s1 == s2);
+System.out.println(s2 == s3);
+	  
+true
+false
+
+===========================================================================================
+
+String s1 = "tutorialspoint";
+String s2 = "tutorialspoint";
+String s3 = new String ("tutorialspoint");
+String s4 = new String ("tutorialspoint");
+System.out.println(s1 == s2);
+System.out.println(s2 == s3);
+System.out.println(s3.equals(s4));
+System.out.println(s3 == s4);
+
+true
+false
+true
+false
+
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg(){  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   p.msg();  
+  }  
+} 
+
+TestExceptionChild
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg(){  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new Parent();  
+   p.msg();  
+  }  
+}
+
+parent
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg(){  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   TestExceptionChild t = (TestExceptionChild) p;
+   t.msg();  
+  }  
+}
+
+TestExceptionChild
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg(){  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   TestExceptionChild t=new TestExceptionChild();  
+   t.msg();  
+  }  
+} 
+
+TestExceptionChild
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg()throws IOException{  // Unchecked Exception
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   p.msg();  
+  }  
+}
+
+Output:Compile Time Error
+prog.java:7: error: msg() in TestExceptionChild cannot override msg() in Parent
+  void msg()throws IOException{  
+       ^
+  overridden method does not throw IOException
+1 error
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg(){System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg()throws ArithmeticException{// Unchecked Exception  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   p.msg();  
+  }  
+}  
+
+TestExceptionChild
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg()throws ArithmeticException{System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg()throws Exception{  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   p.msg();  
+  }  
+}
+
+prog.java:7: error: msg() in TestExceptionChild cannot override msg() in Parent
+  void msg()throws Exception{  
+       ^
+  overridden method does not throw Exception
+1 error
+
+===============================================================================================
+import java.io.*;  
+class Parent{  
+  void msg()throws Exception{System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg()throws Exception{  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   p.msg();  
+  }  
+} 
+
+prog.java:12: error: unreported exception Exception; must be caught or declared to be thrown
+   p.msg();  
+        ^
+1 error
+
+===============================================================================================
+
+import java.io.*;  
+class Parent{  
+  void msg()throws Exception{System.out.println("parent");}  
+}  
+  
+class TestExceptionChild extends Parent{  
+  void msg()throws Exception{  
+    System.out.println("TestExceptionChild");  
+  }  
+  public static void main(String args[]){  
+   Parent p=new TestExceptionChild();  
+   try{
+       p.msg();
+   }  catch(Exception e) {
+       
+   }
+  }  
+} 
+
+TestExceptionChild
+
+===============================================================================================
+
+
+
+===============================================================================================
+
+
+
+
+===============================================================================================
+
+
+
+
+===============================================================================================
+
+
+
+
+===============================================================================================
+
+
+
+===============================================================================================
+
+
+
+===============================================================================================
+
+
+
+===============================================================================================
